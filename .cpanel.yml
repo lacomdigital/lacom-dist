@@ -6,7 +6,6 @@ deployment:
     - /bin/cp $REPOPATH $DEPLOYPATH
     # Remove previous old files, if any.
     - /bin/rm -Rf ${DEPLOYPATH}_old
-    - /bin/rm -Rf ${DEPLOYPATH}_old
     # Copy old site files to another directory.
     - /bin/cp -R ${DEPLOYPATH} ${DEPLOYPATH}_old
     # Sync repository files to the deploy target path, excluding .git folder.
