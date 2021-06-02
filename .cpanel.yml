@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lacomd36/public_html/
+    - export DEPLOYPATH=/home/lacomd36/public_html
     - export REPOPATH=/home/lacomd36/repos/lacom-dist
     # Remove previous old files, if any.
     - /bin/rm -Rf ${DEPLOYPATH}_old
@@ -10,4 +10,4 @@ deployment:
     # Sync repository files to the deploy target path, excluding .git folder.
     # --delete-after will remove deleted files and folders after syncing.
     #- /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
-    - /bin/cp $REPOPATH/ $DEPLOYPATH
+    - find ${REPOPATH} -type f -not -wholename '*.git*' -exec /bin/cp -R '{}' '{DEPLOYPATH}/test/{}' ';'
