@@ -10,5 +10,4 @@ deployment:
     # Sync repository files to the deploy target path, excluding .git folder.
     # --delete-after will remove deleted files and folders after syncing.
     #- /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
-    - mkdir {DEPLOYPATH}/test
-    - find ${REPOPATH}/ -type f -not -wholename '*.git*' -exec /bin/cp -R {} {DEPLOYPATH}/test/{} ;
+    - find ${REPOPATH}/ -type f -not -wholename '*.git*' -exec /bin/cp -R {} ${DEPLOYPATH}/test/{} ;
