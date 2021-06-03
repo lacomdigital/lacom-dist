@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/services/web-dev", {data:[{}],fetch:{},mutations:[]});
