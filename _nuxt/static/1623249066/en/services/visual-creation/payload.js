@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/services/visual-creation", {data:[{}],fetch:{},mutations:[]});
